@@ -9,6 +9,15 @@ app.use(cors({
   allowedHeaders: "Content-Type"
 }));
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://weatherfrontend-nine.vercel.app");
+  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
+
+app.options("*", cors());
+
 app.use(express.json());
 
 const PORT = 5000;
