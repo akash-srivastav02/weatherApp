@@ -22,6 +22,6 @@ app.post("/api/weather", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.listen(3000, () => {
+  console.log(`Server running`);
 });
