@@ -3,14 +3,6 @@ const axios = require("axios");
 const cors = require("cors");
 const app = express();
 
-const corsOptions = {
-  origin: "https://weatherfrontend-nine.vercel.app",
-  methods: "GET,POST",
-  allowedHeaders: "Content-Type"
-};
-
-app.use(cors(corsOptions));
-
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "https://weatherfrontend-nine.vercel.app");
   res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE");
@@ -22,7 +14,7 @@ app.options("*", cors());
 
 app.use(express.json());
 
-const PORT = 5000;
+const PORT = process.env.PORT || 3000;
 const API_KEY = "186fe94d2f534eed88c154100252701";
 const BASE_URL = "http://api.weatherapi.com/v1/current.json";
 
