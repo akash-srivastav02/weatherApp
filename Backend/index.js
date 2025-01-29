@@ -3,11 +3,13 @@ const axios = require("axios");
 const cors = require("cors");
 const app = express();
 
-app.use(cors({
+const corsOptions = {
   origin: "https://weatherfrontend-nine.vercel.app",
-  methods: "GET,POST,PUT,DELETE",
+  methods: "GET,POST",
   allowedHeaders: "Content-Type"
-}));
+};
+
+app.use(cors(corsOptions));
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "https://weatherfrontend-nine.vercel.app");
