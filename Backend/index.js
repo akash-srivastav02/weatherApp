@@ -30,6 +30,6 @@ app.post("/api/weather", async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log(`Server running`);
 });
