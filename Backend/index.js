@@ -4,8 +4,11 @@ const cors = require("cors");
 const app = express();
 
 app.use(cors({
-  origin: "https://weatherfrontend-nine.vercel.app",
+  origin: "https://weatherfrontend-nine.vercel.app", // Allow frontend domain
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: "Content-Type"
 }));
+
 app.use(express.json());
 
 const PORT = 5000;
