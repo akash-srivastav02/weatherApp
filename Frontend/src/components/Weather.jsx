@@ -9,8 +9,8 @@ function Weather() {
   const fetchWeather = async () => {
     setError(null);
     try {
-      const response = await axios.post("http://localhost:5000/api/weather", {
-        location,
+      const response = await axios.post("https://weatherapp-chi-puce.vercel.app/api/weather", {
+        location
       });
       setWeatherData(response.data);
     } catch (err) {
